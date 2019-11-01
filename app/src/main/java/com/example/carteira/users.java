@@ -1,79 +1,39 @@
 package com.example.carteira;
 
+
 import java.io.Serializable;
 
-public class users implements Serializable {
-    public String getNome() {
-        return nome;
-    }
+public class users implements Serializable{
+    public long id;
+    public String nome;
+    public String usuario;
+    public String matricula;
+    public String curso;
+    public int turma;
+    public String caminho_img;
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
+    public users(long id, String nome, String usuario, String matricula, String curso , int turma, String caminho_img){
         this.id = id;
-    }
-
-    public String getMatricula() {
-        return matricula;
-    }
-
-    public void setMatricula(String matricula) {
-        this.matricula = matricula;
-    }
-
-    public String getSenha() {
-        return senha;
-    }
-
-    public void setSenha(String senha) {
-        this.senha = senha;
-    }
-
-    public String getUsuario() {
-        return usuario;
-    }
-
-    public void setUsuario(String usuario) {
+        this.nome = nome;
         this.usuario = usuario;
-    }
-
-    public String getTurma() {
-        return turma;
-    }
-
-    public void setTurma(String turma) {
-        this.turma = turma;
-    }
-
-    public String getCurso() {
-        return curso;
-    }
-
-    public void setCurso(String curso) {
+        this.matricula = matricula;
         this.curso = curso;
-    }
-
-    public String getCaminho_img() {
-        return caminho_img;
-    }
-
-    public void setCaminho_img(String caminho_img) {
+        this.turma = turma;
         this.caminho_img = caminho_img;
     }
 
-    private String nome;
-    private String id;
-    private String matricula;
-    private String senha;
-    private String usuario;
-    private String turma;
-    private String curso;
-    private String caminho_img;
+    public users(String nome, String usuario, String matricula,  String curso, int turma, String caminho_img){
+        this.nome = nome;
+        this.usuario = usuario;
+        this.matricula = matricula;
+        this.curso = curso;
+        this.turma = turma;
+        this.caminho_img = caminho_img;
+    }
+
+    @Override
+    public String toString(){
+        return nome;
+    }
 
 }

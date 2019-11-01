@@ -120,6 +120,7 @@
                 android:paddingLeft="70dp"
                 android:paddingRight="70dp"
                 android:text="Entrar"
+                android:onClick="clicar"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
                 android:textSize="16sp" />
