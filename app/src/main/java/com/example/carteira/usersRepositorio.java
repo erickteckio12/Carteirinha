@@ -57,7 +57,7 @@ public class usersRepositorio {
             String curso = c.getString(c.getColumnIndex(usersSH.COLUNA_CURSO));
             int turma = c.getInt(c.getColumnIndex(usersSH.COLUNA_TURMA));
 
-            OBJ_user = new users(id, nome, user, matr, caminho_img, turma, curso);
+            OBJ_user = new users(id, nome, user, matr, curso, turma, caminho_img);
 
             return OBJ_user;
 
