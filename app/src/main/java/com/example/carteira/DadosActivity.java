@@ -1,6 +1,7 @@
 package com.example.carteira;
 
 
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
@@ -17,7 +18,7 @@ import android.widget.Toast;
 
 
 public class DadosActivity extends AppCompatActivity {
-    TextView txtnome, txtturma;
+    TextView txtnome, txtturma, txtcurso, txtmatricula;
     ImageView codBarra;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,14 +28,20 @@ public class DadosActivity extends AppCompatActivity {
         //
         txtnome = findViewById(R.id.txtNome);
         txtturma = findViewById(R.id.txtTurma);
+        txtcurso = findViewById(R.id.txtCurso);
+        txtmatricula = findViewById(R.id.txtMatricula);
         codBarra = findViewById(R.id.codBarra);
 
         //
         txtnome.setText(usuario.nome);
         txtturma.setText(String.valueOf(usuario.turma));
+        txtcurso.setText(usuario.curso);
+        txtmatricula.setText(usuario.matricula);
         String caminho = usuario.caminho_img;
-        Uri caminhouri = Uri.parse(caminho);
-        codBarra.setImageURI(caminhouri);
+        Context c = getApplicationContext();
+        int id = c.getResources().getIdentifier("drawable/"+caminho, null, c.getPackageName());
+        codBarra.setImageResource(id);
+
 
     }
 }
